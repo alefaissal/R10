@@ -92,8 +92,15 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: white,
       inactiveTintColor: mediumGrey,
-      labelStyle: {fontSize: 10, fontFamily: typography.fontMain},
-      tabStyle: {backgroundColor: black},
+      labelStyle: {
+        fontSize: 10,
+        fontFamily: typography.fontMain,
+      },
+      tabStyle: {
+        backgroundColor: black,
+        height: 85,
+        paddingBottom: 30,
+      },
     },
     safeAreaInset: {
       bottom: 'always',

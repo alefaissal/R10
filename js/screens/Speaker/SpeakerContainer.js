@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import Speaker from './Speaker';
 
-const SpeakerContainer = props => {
-  return <Text>Speaker here</Text>;
-};
+class SpeakerContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return <Speaker />;
+  }
+}
 
 export default SpeakerContainer;

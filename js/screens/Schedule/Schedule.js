@@ -1,16 +1,21 @@
 import React from 'react';
-import {Text, Image, View} from 'react-native';
+import {Text, Image, View, Button} from 'react-native';
 import styles from './styles';
-import ScheduleContainer from './ScheduleContainer';
 
-class Schedule extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return <MapContainer />;
-  }
-}
+const Schedule = ({navigation}) => {
+  return (
+    <View>
+      <Text>Schedule here test 345</Text>
+      <Button
+        title="Got to next section"
+        onPress={() =>
+          navigation.push('Session', {
+            itemId: 'hello',
+          })
+        }
+      />
+    </View>
+  );
+};
 
 export default Schedule;

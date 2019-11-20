@@ -1,20 +1,15 @@
 import React, {Component} from 'react';
 import {Text, Button, View} from 'react-native';
+import Schedule from './Schedule';
 
-const ScheduleContainer = ({navigation}) => {
-  return (
-    <View>
-      <Text>Schedule here test 345</Text>
-      <Button
-        title="Got to next section"
-        onPress={() =>
-          navigation.push('Session', {
-            itemId: 'hello',
-          })
-        }
-      />
-    </View>
-  );
-};
+class ScheduleContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return <Schedule navigation={this.props.navigation} />;
+  }
+}
 
 export default ScheduleContainer;

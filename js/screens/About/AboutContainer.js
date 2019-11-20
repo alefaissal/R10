@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Text, Image, View} from 'react-native';
-import styles from './styles';
 import About from './About';
 
-const AboutContainer = pros => (
-  <View>
-    <About />
-  </View>
-);
+class AboutContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  static navigationOptions = {
+    title: 'About',
+  };
+
+  render() {
+    return <About />;
+  }
+}
 
 export default AboutContainer;
