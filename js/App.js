@@ -7,7 +7,9 @@
  */
 
 import React from 'react';
-import About from './screens/About';
+import {ApolloProvider} from 'react-apollo';
+import client from './config/api';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,13 +18,16 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import RouteStackNavigator from './navigation/RootStackNavigator';
 
-const App = () => {
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <About />
-    </SafeAreaView>
-  );
-};
+class App extends React.Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <RouteStackNavigator />
+      </ApolloProvider>
+    );
+  }
+}
 
 export default App;
