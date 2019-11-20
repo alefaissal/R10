@@ -14,14 +14,6 @@ const Schedule = ({navigation, data}) => {
   console.log(data);
   return (
     <ScrollView>
-      <Button
-        title="Got to next section"
-        onPress={() =>
-          navigation.push('Session', {
-            itemId: 'hello',
-          })
-        }
-      />
       {data.map(each => (
         <View key={each.id}>
           <Text style={styles.time}>
