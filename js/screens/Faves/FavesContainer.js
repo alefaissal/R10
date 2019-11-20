@@ -7,6 +7,9 @@ class FavesContainer extends React.Component {
     super(props);
     this.state = {};
   }
+  static navigationOptions = {
+    title: 'Faves',
+  };
   render() {
     return <Faves />;
   }

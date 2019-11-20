@@ -9,22 +9,16 @@
 import React from 'react';
 import {ApolloProvider} from 'react-apollo';
 import client from './config/api';
-
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import RouteStackNavigator from './navigation/RootStackNavigator';
+import FavesProvider from './context/FavesContext';
+import RootStackNavigator from './navigation/RootStackNavigator';
 
 class App extends React.Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <RouteStackNavigator />
+        <FavesProvider>
+          <RootStackNavigator />
+        </FavesProvider>
       </ApolloProvider>
     );
   }
