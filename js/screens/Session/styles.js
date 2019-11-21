@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
   sessionContainer: {
     padding: 20,
   },
+  locationContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 
   location: {
     fontFamily: typography.fontMain,
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     height: 60,
     width: 200,
-    marginTop: 50,
+    marginTop: 30,
     marginLeft: 'auto',
     marginRight: 'auto',
     justifyContent: 'center',

@@ -22,6 +22,9 @@ export const SCHEDULE_QUERY = gql`
       startTime
       title
       location
+      speaker {
+        name
+      }
     }
   }
 `;

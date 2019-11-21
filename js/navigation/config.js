@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Platform} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {Header} from 'react-navigation-stack';
 import LinearGradient from 'react-native-linear-gradient';
 import {colors, typography} from '../config/styles';
@@ -28,4 +29,16 @@ export const sharedNavigationOptions = navigation => ({
     fontFamily: typography.fontMain,
   },
   headerTintColor: colors.white,
+
+  headerLeft: Platform.OS !== 'ios' &&
+    navigation.state.routeName !== 'Session' && (
+      <View style={{paddingLeft: 16}}>
+        <Icon
+          name="md-menu"
+          size={30}
+          color="white"
+          onPress={() => navigation.toggleDrawer()}
+        />
+      </View>
+    ),
 });

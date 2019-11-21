@@ -1,13 +1,12 @@
 import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {colors, typography} from '../config/styles';
-
-const {black, mediumGrey, white} = colors;
-
 import {About, Faves, Map, Schedule, Speaker, Session} from '../screens';
 import {sharedNavigationOptions} from './config';
+
+const {black, mediumGrey, white} = colors;
 
 const AboutStack = createStackNavigator(
   {
@@ -68,6 +67,7 @@ export default createBottomTabNavigator(
       tabBarIcon: ({focused, tintColor}) => {
         const {routeName} = navigation.state;
         let iconName;
+
         if (routeName === 'Schedule') {
           iconName = 'ios-calendar';
         } else if (routeName === 'Map') {
@@ -77,7 +77,7 @@ export default createBottomTabNavigator(
         } else if (routeName === 'Faves') {
           iconName = 'ios-heart';
         }
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
+        return <Icon name={iconName} size={25} color={tintColor} />;
       },
     }),
 

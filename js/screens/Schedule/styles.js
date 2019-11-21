@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontMain,
     fontSize: typography.baseSize,
     paddingBottom: 15,
+    padding: 15,
   },
   location: {
     fontFamily: typography.fontMain,
     fontSize: typography.baseSize,
     color: colors.mediumGrey,
-    borderBottomWidth: 5,
-    borderBottomColor: colors.black,
+    padding: 15,
   },
   eventContainer: {
     padding: 15,

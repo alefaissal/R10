@@ -1,14 +1,24 @@
 import React from 'react';
-import {Text, Image, View, Button, ScrollView} from 'react-native';
+import {Text, Image, View, Button, ScrollView, Platform} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Session = ({session}) => {
   console.log(`${session.speaker.image}`);
   return (
     <ScrollView>
       <View style={styles.sessionContainer}>
-        <Text style={styles.location}>{session.location}</Text>
+        <View style={styles.locationContainer}>
+          <Text style={styles.location}>{session.location}</Text>
+          {/* TODO ADD ICON on differents platforms ISO and Android*/}
+          <Icon
+            name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+            size={16}
+            color="red"
+          />
+          {/* TODO END OF ADD ICON*/}
+        </View>
         <Text style={styles.title}>{session.title}</Text>
         <Text style={styles.time}>
           {moment(session.startTime).format('hh:mm A')}
