@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
     margin: 10,
     fontSize: typography.baseSize,
   },
+  plusDescription: {
+    fontFamily: typography.fontMain,
+    margin: 10,
+    fontSize: typography.baseSize,
+    fontWeight: '100',
+  },
 });
 
 export default styles;

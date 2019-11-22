@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import {Text, Image, View} from 'react-native';
 import About from './About';
+import {Query} from 'react-apollo';
+import {ALL_CONDUCT} from '../../apollo';
+
+import Loader from '../../components/Loader';
+import {FavesContext} from '../../context/FavesContext';
 
 class AboutContainer extends Component {
   constructor(props) {
@@ -12,7 +17,20 @@ class AboutContainer extends Component {
   };
 
   render() {
-    return <About />;
+    return (
+      <Query query={ALL_CONDUCT}>
+        {({loading, error, data}) => {
+          if (loading) {
+            return <Loader />;
+          }
+          if (error) {
+            return <Text>`Error: ${error.message}`</Text>;
+          }
+
+          return <About allConducts={data.allConducts} />;
+        }}
+      </Query>
+    );
   }
 }
 

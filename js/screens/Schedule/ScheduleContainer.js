@@ -5,6 +5,7 @@ import {Query} from 'react-apollo';
 import {SCHEDULE_QUERY} from '../../apollo';
 import {formatSessionData} from '../../lib/helpers';
 import Loader from '../../components/Loader';
+import {FavesContext} from '../../context/FavesContext';
 
 class ScheduleContainer extends Component {
   static navigationOptions = {
@@ -23,10 +24,15 @@ class ScheduleContainer extends Component {
           }
           let ordSessions = formatSessionData(data.allSessions);
           return (
-            <Schedule
-              navigation={this.props.navigation}
-              sessions={ordSessions}
-            />
+            <FavesContext.Consumer>
+              {({faveIds}) => (
+                <Schedule
+                  navigation={this.props.navigation}
+                  sessions={ordSessions}
+                  faveIds={faveIds}
+                />
+              )}
+            </FavesContext.Consumer>
           );
         }}
       </Query>

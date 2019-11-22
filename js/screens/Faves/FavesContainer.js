@@ -3,9 +3,9 @@ import Faves from './Faves';
 import {Text} from 'react-native';
 import {Query} from 'react-apollo';
 import {SCHEDULE_QUERY} from '../../apollo';
-import {formatSessionData} from '../../lib/helpers';
 import Loader from '../../components/Loader';
 import {FavesContext} from '../../context/FavesContext';
+import {formatSessionData} from '../../lib/helpers';
 
 class FavesContainer extends React.Component {
   constructor(props) {

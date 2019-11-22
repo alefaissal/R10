@@ -29,3 +29,27 @@ export const SCHEDULE_QUERY = gql`
     }
   }
 `;
+
+export const ALL_CONDUCT = gql`
+  query {
+    allConducts {
+      id
+      description
+      title
+      order
+    }
+  }
+`;
+
+export const ALL_SPEAKERS = gql`
+  query {
+    allSpeakers {
+      name
+      id
+      bio
+      image
+      session
+      url
+    }
+  }
+`;

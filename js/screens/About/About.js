@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, Image, View, ScrollView} from 'react-native';
 import styles from './styles';
 
-const About = props => {
+const About = ({allConducts}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -21,19 +21,13 @@ const About = props => {
           Vancouver, BC.
         </Text>
         <Text style={styles.heading}>Code of Conduct</Text>
-        <Text style={styles.plusItems}>+ Purpose</Text>
-        <Text style={styles.plusItems}>+ Open Source Citinzenship</Text>
-        <Text style={styles.plusItems}>+ Expected Behaviour</Text>
-        <Text style={styles.plusItems}>+ Unacceptable Behaviour</Text>
-        <Text style={styles.plusItems}>
-          + Consequences Of Unacceptable Behaviour
-        </Text>
-        <Text style={styles.plusItems}>
-          + What To Do If You Witness Or Are Subject To Unacceptable Behaviour
-        </Text>
-        <Text style={styles.plusItems}>+ Scope</Text>
-        <Text style={styles.plusItems}>+ Contact Information</Text>
-        <Text style={styles.plusItems}>+ License and Attribution</Text>
+        {allConducts.map(each => (
+          <View key={each.id}>
+            <Text style={styles.plusItems}>{each.title}</Text>
+            <Text style={styles.plusDescription}>{each.description}</Text>
+          </View>
+        ))}
+
         <Text>© Alex Faissal 2019</Text>
       </View>
     </ScrollView>
