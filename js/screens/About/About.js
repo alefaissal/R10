@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, Image, View, ScrollView} from 'react-native';
 import styles from './styles';
+import CodeOfConduct from '../../components/CodeOfConduct';
 
 const About = ({allConducts}) => {
   return (
@@ -22,10 +23,11 @@ const About = ({allConducts}) => {
         </Text>
         <Text style={styles.heading}>Code of Conduct</Text>
         {allConducts.map(each => (
-          <View key={each.id}>
-            <Text style={styles.plusItems}>{each.title}</Text>
-            <Text style={styles.plusDescription}>{each.description}</Text>
-          </View>
+          <CodeOfConduct
+            key={each.id}
+            title={each.title}
+            description={each.description}
+          />
         ))}
 
         <Text>© Alex Faissal 2019</Text>

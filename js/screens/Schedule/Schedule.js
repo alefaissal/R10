@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   SectionList,
+  Platform,
 } from 'react-native';
 import styles from './styles';
 import moment from 'moment';
@@ -32,14 +33,16 @@ const Schedule = ({navigation, sessions, faveIds}) => {
                   }
                 }}>
                 <View>
-                  <Text style={styles.title}>{item.title}</Text>
-                  {faveIds && faveIds.includes(item.id) && (
-                    <Icon
-                      name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
-                      size={16}
-                      color="red"
-                    />
-                  )}
+                  <View style={styles.flexHeart}>
+                    <Text style={styles.title}>{item.title}</Text>
+                    {faveIds && faveIds.includes(item.id) && (
+                      <Icon
+                        name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+                        size={16}
+                        color="red"
+                      />
+                    )}
+                  </View>
                   <Text style={styles.location}>{item.location}</Text>
                 </View>
               </TouchableOpacity>

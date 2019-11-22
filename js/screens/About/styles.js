@@ -25,18 +25,6 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontMain,
     margin: 10,
   },
-  plusItems: {
-    color: colors.purple,
-    fontFamily: typography.fontMain,
-    margin: 10,
-    fontSize: typography.baseSize,
-  },
-  plusDescription: {
-    fontFamily: typography.fontMain,
-    margin: 10,
-    fontSize: typography.baseSize,
-    fontWeight: '100',
-  },
 });
 
 export default styles;

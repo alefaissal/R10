@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
   eventContainer: {
     padding: 15,
   },
-  button: {},
+  flexHeart: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingRight: 10,
+  },
 });
 
 export default styles;
