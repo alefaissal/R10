@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 export const SESSION_QUERY = gql`
   query Session($id: ID!) {
     Session(id: $id) {
+      id
       location
       title
       startTime

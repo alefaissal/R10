@@ -13,10 +13,6 @@ import styles from './styles';
 import moment from 'moment';
 
 const Schedule = ({navigation, sessions}) => {
-  function Item({title}) {
-    return <Text style={styles.time}>{moment(title).format('hh:mm A')}</Text>;
-  }
-  console.log(sessions);
   return (
     <ScrollView>
       <SafeAreaView style={styles.container}>

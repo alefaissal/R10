@@ -4,6 +4,7 @@ import Session from './Session';
 import {Query} from 'react-apollo';
 import {SESSION_QUERY} from '../../apollo';
 import Loader from '../../components/Loader';
+import {FavesContext} from '../../context/FavesContext';
 
 class SessionContainer extends Component {
   constructor(props) {
@@ -25,7 +26,18 @@ class SessionContainer extends Component {
           if (error) {
             return <Text>`Error: ${error.message}`</Text>;
           }
-          return <Session session={data.Session} />;
+          return (
+            <FavesContext.Consumer>
+              {({addFaveSessionId, removeFaveSessionId, faveIds}) => (
+                <Session
+                  session={data.Session}
+                  addFaveSessionId={addFaveSessionId}
+                  removeFaveSessionId={removeFaveSessionId}
+                  faveIds={faveIds}
+                />
+              )}
+            </FavesContext.Consumer>
+          );
         }}
       </Query>
     );

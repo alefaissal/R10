@@ -4,20 +4,19 @@ import styles from './styles';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Session = ({session}) => {
-  console.log(`${session.speaker.image}`);
+const Session = ({session, addFaveSessionId, removeFaveSessionId, faveIds}) => {
   return (
     <ScrollView>
       <View style={styles.sessionContainer}>
         <View style={styles.locationContainer}>
           <Text style={styles.location}>{session.location}</Text>
-          {/* TODO ADD ICON on differents platforms ISO and Android*/}
-          <Icon
-            name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
-            size={16}
-            color="red"
-          />
-          {/* TODO END OF ADD ICON*/}
+          {faveIds && faveIds.includes(session.id) && (
+            <Icon
+              name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+              size={16}
+              color="red"
+            />
+          )}
         </View>
         <Text style={styles.title}>{session.title}</Text>
         <Text style={styles.time}>
@@ -35,7 +34,20 @@ const Session = ({session}) => {
           <Text style={styles.name}>{session.speaker.name}</Text>
         </View>
         <View style={styles.button}>
-          <Button title="Remove from Faves" color="white" onPress={() => ''} />
+          {faveIds && faveIds.includes(session.id) ? (
+            <Button
+              style={styles.button}
+              title="Remove from Faves"
+              color="white"
+              onPress={() => removeFaveSessionId(session.id)}
+            />
+          ) : (
+            <Button
+              title="Add to Faves"
+              color="white"
+              onPress={() => addFaveSessionId(session.id)}
+            />
+          )}
         </View>
       </View>
     </ScrollView>
