@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
     fontSize: typography.baseSize,
     fontWeight: '100',
   },
+  flexSign: {
+    flexDirection: 'row',
+    alignContent: 'center',
+  },
 });
 
 export default styles;
