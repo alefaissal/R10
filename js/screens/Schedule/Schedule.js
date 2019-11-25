@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const Schedule = ({navigation, sessions, faveIds}) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <SectionList
         sections={sessions}
         keyExtractor={(item, index) => item + index}
@@ -53,7 +53,7 @@ const Schedule = ({navigation, sessions, faveIds}) => {
           <Text style={styles.time}>{moment(title).format('hh:mm A')}</Text>
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 

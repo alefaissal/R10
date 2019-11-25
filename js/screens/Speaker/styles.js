@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   mainModalContainer: {
-    marginTop: 40,
+    // marginTop: 40,
+    paddingTop: 40,
     backgroundColor: colors.black,
   },
   modalBlackOutside: {

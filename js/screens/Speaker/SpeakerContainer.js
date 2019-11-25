@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {Text, Modal, View, Alert, TouchableHighlight} from 'react-native';
+import {
+  Text,
+  Modal,
+  View,
+  Alert,
+  TouchableHighlight,
+  StatusBar,
+} from 'react-native';
 import Speaker from './Speaker';
 import {Query} from 'react-apollo';
 import {SPEAKER_QUERY} from '../../apollo';
@@ -36,7 +43,7 @@ class SpeakerContainer extends Component {
           console.log(data);
 
           return (
-            <SafeAreaView style={styles.mainModalContainer}>
+            <View style={styles.mainModalContainer}>
               <Modal
                 animationType="slide"
                 transparent={false}
@@ -61,7 +68,7 @@ class SpeakerContainer extends Component {
                   </View>
                 </View>
               </Modal>
-            </SafeAreaView>
+            </View>
           );
         }}
       </Query>

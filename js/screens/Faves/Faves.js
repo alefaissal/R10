@@ -26,7 +26,7 @@ const Faves = ({navigation, sessions, faveIds}) => {
 
   return (
     <ScrollView>
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <SectionList
           sections={favSessions}
           keyExtractor={(item, index) => item + index}
@@ -65,7 +65,7 @@ const Faves = ({navigation, sessions, faveIds}) => {
             <Text style={styles.time}>{moment(title).format('hh:mm A')}</Text>
           )}
         />
-      </SafeAreaView>
+      </View>
     </ScrollView>
   );
 };
