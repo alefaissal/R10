@@ -9,6 +9,7 @@ export const SESSION_QUERY = gql`
       startTime
       description
       speaker {
+        id
         image
         name
       }
@@ -49,6 +50,18 @@ export const ALL_SPEAKERS = gql`
       bio
       image
       session
+      url
+    }
+  }
+`;
+
+export const SPEAKER_QUERY = gql`
+  query Speaker($id: ID!) {
+    Speaker(id: $id) {
+      id
+      name
+      bio
+      image
       url
     }
   }

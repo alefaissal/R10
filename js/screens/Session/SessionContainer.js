@@ -26,6 +26,7 @@ class SessionContainer extends Component {
           if (error) {
             return <Text>`Error: ${error.message}`</Text>;
           }
+          console.log(data);
           return (
             <FavesContext.Consumer>
               {({addFaveSessionId, removeFaveSessionId, faveIds}) => (
@@ -34,6 +35,7 @@ class SessionContainer extends Component {
                   addFaveSessionId={addFaveSessionId}
                   removeFaveSessionId={removeFaveSessionId}
                   faveIds={faveIds}
+                  navigation={this.props.navigation}
                 />
               )}
             </FavesContext.Consumer>

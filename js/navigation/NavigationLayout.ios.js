@@ -22,6 +22,7 @@ const AboutStack = createStackNavigator(
 const FaveStack = createStackNavigator(
   {
     Faves,
+    Session: Session,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
@@ -45,6 +46,7 @@ const ScheduleStack = createStackNavigator(
   {
     Schedule: Schedule,
     Session: Session,
+    Speaker: Speaker,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

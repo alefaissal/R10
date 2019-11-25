@@ -1,10 +1,25 @@
 import React from 'react';
-import {Text, Image, View, Button, ScrollView, Platform} from 'react-native';
+import {
+  Text,
+  Image,
+  View,
+  Button,
+  ScrollView,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
+import SpeakerContainer from '../Speaker/SpeakerContainer';
 
-const Session = ({session, addFaveSessionId, removeFaveSessionId, faveIds}) => {
+const Session = ({
+  navigation,
+  session,
+  addFaveSessionId,
+  removeFaveSessionId,
+  faveIds,
+}) => {
   return (
     <ScrollView>
       <View style={styles.sessionContainer}>
@@ -31,7 +46,16 @@ const Session = ({session, addFaveSessionId, removeFaveSessionId, faveIds}) => {
               uri: session.speaker.image,
             }}
           />
-          <Text style={styles.name}>{session.speaker.name}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              if (session.speaker) {
+                return navigation.push('Speaker', {
+                  speakerId: session.speaker.id,
+                });
+              }
+            }}>
+            <Text style={styles.name}>{session.speaker.name}</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.button}>
           {faveIds && faveIds.includes(session.id) ? (
