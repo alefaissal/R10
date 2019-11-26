@@ -3,7 +3,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {colors, typography} from '../config/styles';
-import {About, Faves, Map, Schedule, Speaker, Session} from '../screens';
+import {About, Faves, Map, Schedule, Session} from '../screens';
 import {sharedNavigationOptions} from './config';
 
 const {black, mediumGrey, white} = colors;

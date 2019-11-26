@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, Button, View} from 'react-native';
+import {Text} from 'react-native';
 import Schedule from './Schedule';
 import {Query} from 'react-apollo';
 import {SCHEDULE_QUERY} from '../../apollo';

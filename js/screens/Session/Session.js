@@ -11,9 +11,7 @@ import {
 import styles from './styles';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
-import SpeakerContainer from '../Speaker/SpeakerContainer';
-import {colors, typography} from '../../config/styles';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {colors} from '../../config/styles';
 
 const Session = ({
   navigation,

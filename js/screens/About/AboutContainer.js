@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {Text, Image, View} from 'react-native';
+import {Text} from 'react-native';
 import About from './About';
 import {Query} from 'react-apollo';
 import {ALL_CONDUCT} from '../../apollo';
-
 import Loader from '../../components/Loader';
-import {FavesContext} from '../../context/FavesContext';
 
 class AboutContainer extends Component {
   constructor(props) {

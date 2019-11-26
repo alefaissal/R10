@@ -5,9 +5,8 @@ import {Query} from 'react-apollo';
 import {SCHEDULE_QUERY} from '../../apollo';
 import Loader from '../../components/Loader';
 import {FavesContext} from '../../context/FavesContext';
-import {formatSessionData} from '../../lib/helpers';
 
-class FavesContainer extends React.Component {
+class FavesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};

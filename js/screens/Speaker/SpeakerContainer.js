@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  Modal,
-  View,
-  Alert,
-  TouchableHighlight,
-  StatusBar,
-} from 'react-native';
+import {Text, Modal, View, Alert, TouchableHighlight} from 'react-native';
 import Speaker from './Speaker';
 import {Query} from 'react-apollo';
 import {SPEAKER_QUERY} from '../../apollo';
 import Loader from '../../components/Loader';
 import styles from './styles';
-import SafeAreaView from 'react-native-safe-area-view';
 
 class SpeakerContainer extends Component {
   constructor(props) {
