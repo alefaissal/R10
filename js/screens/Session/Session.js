@@ -12,6 +12,8 @@ import styles from './styles';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SpeakerContainer from '../Speaker/SpeakerContainer';
+import {colors, typography} from '../../config/styles';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Session = ({
   navigation,
@@ -62,13 +64,14 @@ const Session = ({
             <Button
               style={styles.button}
               title="Remove from Faves"
-              color="white"
+              color={colors.purple}
               onPress={() => removeFaveSessionId(session.id)}
             />
           ) : (
             <Button
               title="Add to Faves"
-              color="white"
+              color={colors.purple}
+              width="200"
               onPress={() => addFaveSessionId(session.id)}
             />
           )}

@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.purple,
     borderRadius: 60,
     height: 60,
-    width: 200,
+    width: 220,
     marginTop: 30,
     marginLeft: 'auto',
     marginRight: 'auto',
