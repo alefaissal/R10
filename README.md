@@ -6,9 +6,9 @@ R10 is a Mobile App build with React Native Technology that can be deployed in b
 
 ## Screenshot from Mobile
 
-## <img src="./js/assets/images/Schedule.png" alt="graphql diagram" width="200"/> <img src="./js/assets/images/Faves.png" alt="graphql diagram" width="200"/>
+## <img src="./js/assets/images/Schedule.png" alt="ios screenshot" width="200"/> <img src="./js/assets/images/Faves.png" alt="ios screenshot" width="200"/>
 
-## <img src="./js/assets/images/Map.png" alt="graphql diagram" width="200"/> <img src="./js/assets/images/AboutTwo.png" alt="graphql diagram" width="200"/>
+## <img src="./js/assets/images/Map.png" alt="ios screenshot" width="200"/> <img src="./js/assets/images/AboutTwo.png" alt="ios screenshot" width="200"/>
 
 ## Description
 
