@@ -28,7 +28,6 @@ class SpeakerContainer extends Component {
     title: 'Speaker',
   };
   render() {
-    console.log(this.props.navigation);
     return (
       <Query
         query={SPEAKER_QUERY}
@@ -40,7 +39,6 @@ class SpeakerContainer extends Component {
           if (error) {
             return <Text>`Error: ${error.message}`</Text>;
           }
-          console.log(data);
 
           return (
             <View style={styles.mainModalContainer}>

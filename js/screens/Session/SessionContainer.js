@@ -26,7 +26,6 @@ class SessionContainer extends Component {
           if (error) {
             return <Text>`Error: ${error.message}`</Text>;
           }
-          console.log(data);
           return (
             <FavesContext.Consumer>
               {({addFaveSessionId, removeFaveSessionId, faveIds}) => (
