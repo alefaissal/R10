@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image, View, Button, Linking} from 'react-native';
+import {Text, Image, View, Button, Linking, Platform} from 'react-native';
 import styles from './styles';
 import {colors} from '../../config/styles';
 
@@ -20,7 +20,7 @@ const Speaker = ({speaker}) => {
         <Button
           style={styles.button}
           title="Read More in Wikipedia"
-          color={colors.purple}
+          color={Platform.OS === 'ios' ? colors.white : colors.purple}
           onPress={() => Linking.openURL(speaker.url)}
         />
       </View>

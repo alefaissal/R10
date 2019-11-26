@@ -64,13 +64,13 @@ const Session = ({
             <Button
               style={styles.button}
               title="Remove from Faves"
-              color={colors.purple}
+              color={Platform.OS === 'ios' ? colors.white : colors.purple}
               onPress={() => removeFaveSessionId(session.id)}
             />
           ) : (
             <Button
               title="Add to Faves"
-              color={colors.purple}
+              color={Platform.OS === 'ios' ? colors.white : colors.purple}
               width="200"
               onPress={() => addFaveSessionId(session.id)}
             />
