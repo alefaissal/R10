@@ -12,6 +12,7 @@ import styles from './styles';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../../config/styles';
+import PropTypes from 'prop-types';
 
 const Session = ({
   navigation,
@@ -77,6 +78,20 @@ const Session = ({
       </View>
     </ScrollView>
   );
+};
+
+Session.propTypes = {
+  session: PropTypes.shape({
+    description: PropTypes.string,
+    id: PropTypes.string,
+    location: PropTypes.string,
+    speaker: PropTypes.object,
+    startTime: PropTypes.string,
+    title: PropTypes.string,
+  }),
+  faveIds: PropTypes.arrayOf(PropTypes.string),
+  addFaveSession: PropTypes.func,
+  removeFaveSession: PropTypes.func,
 };
 
 export default Session;

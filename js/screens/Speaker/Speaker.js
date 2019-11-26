@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, Image, View, Button, Linking, Platform} from 'react-native';
 import styles from './styles';
 import {colors} from '../../config/styles';
+import PropTypes from 'prop-types';
 
 const Speaker = ({speaker}) => {
   return (
@@ -26,6 +27,17 @@ const Speaker = ({speaker}) => {
       </View>
     </View>
   );
+};
+
+Speaker.propTypes = {
+  speaker: PropTypes.shape({
+    bio: PropTypes.string,
+    id: PropTypes.string,
+    image: PropTypes.string,
+    name: PropTypes.string,
+    session: PropTypes.object,
+    url: PropTypes.string,
+  }),
 };
 
 export default Speaker;
