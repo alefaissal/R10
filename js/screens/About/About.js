@@ -1,17 +1,17 @@
-import React from 'react';
-import {Text, Image, View, ScrollView} from 'react-native';
-import styles from './styles';
-import CodeOfConduct from '../../components/CodeOfConduct';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Text, Image, View, ScrollView } from "react-native";
+import styles from "./styles";
+import CodeOfConduct from "../../components/CodeOfConduct";
+import PropTypes from "prop-types";
 
-const About = ({allConducts}) => {
+const About = ({ allConducts }) => {
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}
-            source={require('../../assets/images/r10_logo.png')}
+            source={require("../../assets/images/r10_logo.png")}
           />
         </View>
         <Text style={styles.generalText}>
@@ -38,7 +38,10 @@ const About = ({allConducts}) => {
 };
 
 About.propTypes = {
-  allConducts: PropTypes.func,
+  allConducts: PropTypes.shape({
+    description: PropTypes.string,
+    title: PropTypes.string
+  })
 };
 
 export default About;
