@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {Text} from 'react-native';
-import About from './About';
-import {Query} from 'react-apollo';
-import {ALL_CONDUCT} from '../../apollo';
-import Loader from '../../components/Loader';
+import React, { Component } from "react";
+import { Text } from "react-native";
+import About from "./About";
+import { Query } from "react-apollo";
+import { ALL_CONDUCT } from "../../apollo";
+import Loader from "../../components/Loader";
 
 class AboutContainer extends Component {
   constructor(props) {
@@ -11,13 +11,13 @@ class AboutContainer extends Component {
     this.state = {};
   }
   static navigationOptions = {
-    title: 'About',
+    title: "About"
   };
 
   render() {
     return (
       <Query query={ALL_CONDUCT}>
-        {({loading, error, data}) => {
+        {({ loading, error, data }) => {
           if (loading) {
             return <Loader />;
           }

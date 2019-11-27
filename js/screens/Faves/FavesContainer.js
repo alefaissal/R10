@@ -1,23 +1,23 @@
-import React, {Component} from 'react';
-import Faves from './Faves';
-import {Text} from 'react-native';
-import {Query} from 'react-apollo';
-import {SCHEDULE_QUERY} from '../../apollo';
-import Loader from '../../components/Loader';
-import {FavesContext} from '../../context/FavesContext';
-
+import React, { Component } from "react";
+import Faves from "./Faves";
+import { Text } from "react-native";
+import { Query } from "react-apollo";
+import { SCHEDULE_QUERY } from "../../apollo";
+import Loader from "../../components/Loader";
+import { FavesContext } from "../../context/FavesContext";
+import PropTypes from "prop-types";
 class FavesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   static navigationOptions = {
-    title: 'Faves',
+    title: "Faves"
   };
   render() {
     return (
       <Query query={SCHEDULE_QUERY}>
-        {({loading, error, data}) => {
+        {({ loading, error, data }) => {
           if (loading) {
             return <Loader />;
           }
@@ -26,7 +26,7 @@ class FavesContainer extends Component {
           }
           return (
             <FavesContext.Consumer>
-              {({faveIds}) => (
+              {({ faveIds }) => (
                 <Faves
                   sessions={data.allSessions}
                   faveIds={faveIds}
@@ -42,4 +42,7 @@ class FavesContainer extends Component {
   }
 }
 
+FavesContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 export default FavesContainer;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   Image,
@@ -6,20 +6,20 @@ import {
   Button,
   ScrollView,
   Platform,
-  TouchableOpacity,
-} from 'react-native';
-import styles from './styles';
-import moment from 'moment';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {colors} from '../../config/styles';
-import PropTypes from 'prop-types';
+  TouchableOpacity
+} from "react-native";
+import styles from "./styles";
+import moment from "moment";
+import Icon from "react-native-vector-icons/Ionicons";
+import { colors } from "../../config/styles";
+import PropTypes from "prop-types";
 
 const Session = ({
   navigation,
   session,
   addFaveSessionId,
   removeFaveSessionId,
-  faveIds,
+  faveIds
 }) => {
   return (
     <ScrollView>
@@ -28,7 +28,7 @@ const Session = ({
           <Text style={styles.location}>{session.location}</Text>
           {faveIds && faveIds.includes(session.id) && (
             <Icon
-              name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+              name={Platform.OS === "ios" ? "ios-heart" : "md-heart"}
               size={16}
               color="red"
             />
@@ -36,7 +36,7 @@ const Session = ({
         </View>
         <Text style={styles.title}>{session.title}</Text>
         <Text style={styles.time}>
-          {moment(session.startTime).format('hh:mm A')}
+          {moment(session.startTime).format("hh:mm A")}
         </Text>
         <Text style={styles.description}>{session.description}</Text>
         <Text style={styles.presentedBy}>Presented by:</Text>
@@ -44,17 +44,18 @@ const Session = ({
           <Image
             style={styles.image}
             source={{
-              uri: session.speaker.image,
+              uri: session.speaker.image
             }}
           />
           <TouchableOpacity
             onPress={() => {
               if (session.speaker) {
-                return navigation.push('Speaker', {
-                  speakerId: session.speaker.id,
+                return navigation.push("Speaker", {
+                  speakerId: session.speaker.id
                 });
               }
-            }}>
+            }}
+          >
             <Text style={styles.name}>{session.speaker.name}</Text>
           </TouchableOpacity>
         </View>
@@ -63,13 +64,13 @@ const Session = ({
             <Button
               style={styles.button}
               title="Remove from Faves"
-              color={Platform.OS === 'ios' ? colors.white : colors.purple}
+              color={Platform.OS === "ios" ? colors.white : colors.purple}
               onPress={() => removeFaveSessionId(session.id)}
             />
           ) : (
             <Button
               title="Add to Faves"
-              color={Platform.OS === 'ios' ? colors.white : colors.purple}
+              color={Platform.OS === "ios" ? colors.white : colors.purple}
               width="200"
               onPress={() => addFaveSessionId(session.id)}
             />
@@ -87,11 +88,12 @@ Session.propTypes = {
     location: PropTypes.string,
     speaker: PropTypes.object,
     startTime: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.string
   }),
   faveIds: PropTypes.arrayOf(PropTypes.string),
   addFaveSession: PropTypes.func,
   removeFaveSession: PropTypes.func,
+  navigation: PropTypes.object.isRequired
 };
 
 export default Session;

@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
-import {Text} from 'react-native';
-import Session from './Session';
-import {Query} from 'react-apollo';
-import {SESSION_QUERY} from '../../apollo';
-import Loader from '../../components/Loader';
-import {FavesContext} from '../../context/FavesContext';
+import React, { Component } from "react";
+import { Text } from "react-native";
+import Session from "./Session";
+import { Query } from "react-apollo";
+import { SESSION_QUERY } from "../../apollo";
+import Loader from "../../components/Loader";
+import { FavesContext } from "../../context/FavesContext";
+import PropTypes from "prop-types";
 
 class SessionContainer extends Component {
   constructor(props) {
@@ -12,14 +13,15 @@ class SessionContainer extends Component {
     this.state = {};
   }
   static navigationOptions = {
-    title: 'Session',
+    title: "Session"
   };
   render() {
     return (
       <Query
         query={SESSION_QUERY}
-        variables={{id: this.props.navigation.state.params.itemId}}>
-        {({loading, error, data}) => {
+        variables={{ id: this.props.navigation.state.params.itemId }}
+      >
+        {({ loading, error, data }) => {
           if (loading) {
             return <Loader />;
           }
@@ -28,7 +30,7 @@ class SessionContainer extends Component {
           }
           return (
             <FavesContext.Consumer>
-              {({addFaveSessionId, removeFaveSessionId, faveIds}) => (
+              {({ addFaveSessionId, removeFaveSessionId, faveIds }) => (
                 <Session
                   session={data.Session}
                   addFaveSessionId={addFaveSessionId}
@@ -44,5 +46,8 @@ class SessionContainer extends Component {
     );
   }
 }
+SessionContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default SessionContainer;

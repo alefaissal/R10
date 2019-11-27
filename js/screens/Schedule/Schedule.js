@@ -64,7 +64,8 @@ Schedule.propTypes = {
     startTime: PropTypes.string,
     title: PropTypes.string
   }),
-  faveIds: PropTypes.arrayOf(PropTypes.string)
+  faveIds: PropTypes.arrayOf(PropTypes.string),
+  navigation: PropTypes.object.isRequired
 };
 
 export default Schedule;
