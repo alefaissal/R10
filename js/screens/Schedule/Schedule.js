@@ -56,14 +56,7 @@ const Schedule = ({ navigation, sessions, faveIds }) => {
 };
 
 Schedule.propTypes = {
-  sessions: PropTypes.shape({
-    description: PropTypes.string,
-    id: PropTypes.string,
-    location: PropTypes.string,
-    speaker: PropTypes.object,
-    startTime: PropTypes.string,
-    title: PropTypes.string
-  }),
+  sessions: PropTypes.array.isRequired,
   faveIds: PropTypes.arrayOf(PropTypes.string),
   navigation: PropTypes.object.isRequired
 };

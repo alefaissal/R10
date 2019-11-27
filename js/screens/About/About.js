@@ -5,7 +5,6 @@ import CodeOfConduct from "../../components/CodeOfConduct";
 import PropTypes from "prop-types";
 
 const About = ({ allConducts }) => {
-  console.log(allConducts);
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -39,10 +38,7 @@ const About = ({ allConducts }) => {
 };
 
 About.propTypes = {
-  allConducts: PropTypes.shape({
-    description: PropTypes.string,
-    title: PropTypes.string
-  })
+  allConducts: PropTypes.array.isRequired
 };
 
 export default About;
